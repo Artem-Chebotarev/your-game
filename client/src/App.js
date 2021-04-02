@@ -1,5 +1,4 @@
 import "./App.css";
-import Topic from "./components/topics/topics";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,6 +9,7 @@ import {
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Start from "./components/Start/Start";
+import Topics from "./components/topics/topics";
 
 function App() {
   const [user, setuser] = useState({ name: "", points: null });
@@ -23,7 +23,7 @@ function App() {
           </Route>
           <Route exact path="/game">
             {/* {user.name ? <Topic /> : <Redirect to="/" />} */}
-            <Topic />
+            <Topics />
           </Route>
           <Route exact path="/gameover">
             <div>gameOver</div>
