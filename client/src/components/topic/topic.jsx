@@ -14,8 +14,9 @@ export default function Topic({topic}) {
         {questions.length ? questions.map(question => {
           return (
             <Link
+            key = {question._id}
             className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-            to={`/${question._id}`}
+            to={`/game/${question._id}`}
             >
               <div>{question.points}</div>
             </Link>
