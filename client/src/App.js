@@ -1,9 +1,16 @@
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+import Topic from "./components/topics/topics";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/">
+          <Topic />
+        </Route>
+      </div>
+    </Router>
   );
 }
 
