@@ -8,6 +8,7 @@ import initState from './redux/initstate';
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 const store = createStore(rootReducer, initState, composeWithDevTools())
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
