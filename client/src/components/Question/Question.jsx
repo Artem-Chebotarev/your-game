@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router"
-import { getTopicsFromServer } from "../../redux/actionCreators/topicsAC"
+import { changePoints, getTopicsFromServer } from "../../redux/actionCreators/topicsAC"
 import './styles.css'
 const Question = () => {
 
@@ -32,8 +32,10 @@ const Question = () => {
 
   const handlerCheckAnswer = async () => {
     if (input === currentQuestion.answer) {
+      dispatch(changePoints({ status: true, points: currentQuestion.points }))
       setResult('Правильный ответ')
     } else {
+      dispatch(changePoints({ status: false, points: currentQuestion.points }))
       setResult(`Вы ошиблись. Правильный ответ: ${currentQuestion.answer}`)
       setTimeout(() => {
         setResult('Следующая ошибка может быть последней для тебя.')
@@ -47,9 +49,9 @@ const Question = () => {
       },
       body: JSON.stringify({ id })
     })
-    .then(setTimeout(() => {
-      history.push('/game')
-    }, 5000))
+      .then(setTimeout(() => {
+        history.push('/game')
+      }, 5000))
   }
 
   return (
