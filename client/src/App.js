@@ -1,29 +1,29 @@
-import './App.css';
+import "./App.css";
+import Topic from "./components/topics/topics";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-import { useState } from 'react'
-import Navbar from './components/Navbar/Navbar'
-import Start from './components/Start/Start';
-
-
+import { useState } from "react";
+import Navbar from "./components/Navbar/Navbar";
+import Start from "./components/Start/Start";
 
 function App() {
-  const [user, setuser] = useState({ name: '', points: null })
+  const [user, setuser] = useState({ name: "", points: null });
   return (
     <>
       <Router>
-          <Navbar />
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Start />
           </Route>
           <Route exact path="/game">
-            {user.name ? < div>game</div> : <Redirect to="/" />}
+            {/* {user.name ? <Topic /> : <Redirect to="/" />} */}
+            <Topic />
           </Route>
           <Route exact path="/gameover">
             <div>gameOver</div>
