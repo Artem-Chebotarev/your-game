@@ -17,7 +17,7 @@ import Question from "./components/Question/Question";
 
 
 function App() {
-  const user = useSelector(state => state.user)
+  const user = useSelector(state => state.user);
   return (
     <>
       <Router>
