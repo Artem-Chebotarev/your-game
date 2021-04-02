@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 
 function Navbar() {
-  const [user, setuser] = useState({ name: 'Vasya', points: 10 })
+  const user = useSelector(state => state.user);
   return (
     <>
       {

@@ -20,6 +20,12 @@ app.get("/api/v1/game", async (req, res) => {
   res.json(topics);
 });
 
+// app.get("/api/v1/game/:id", async (req, res) => {
+//   const question = await QuestionModel.findById().populate("questions");
+//   console.log(topics);
+//   res.json(topics);
+// });
+
 app.listen(PORT, () => {
   console.log("Server has been started on port ", PORT);
 });
