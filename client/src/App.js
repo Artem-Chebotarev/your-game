@@ -10,7 +10,7 @@ import {
 import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Start from './components/Start/Start';
-import {  useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import Topics from "./components/topics/topics";
 
 
@@ -23,7 +23,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/game">
-            {/* {user.name ? <Topic /> : <Redirect to="/" />} */}
+            {user.name ? <Topics /> : <Redirect to="/" />}
             <Topics />
           </Route>
           <Route exact path="/gameover">

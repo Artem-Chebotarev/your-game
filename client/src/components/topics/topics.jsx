@@ -18,7 +18,7 @@ export default function Topics() {
   const topics = useSelector(state => state.topics)
 
   return (
-    <div className="d-flex justify-content-center align-items-center vw-100 vh-100">
+    <div className="d-flex justify-content-center align-items-center vw-100 vh-100 backOfGame">
       <div className="border border-danger d-flex flex-column justify-content-center align-items-center w-75 h-75">
         {topics.length ? topics.map(topic => {
           return (
