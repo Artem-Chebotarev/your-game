@@ -1,77 +1,27 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Topic() {
+export default function Topic({topic}) {
+
+  const questions = topic.questions
+
   return (
     <>
       <div className="border border-danger d-flex justify-content-center align-items-center w-100 h-100">
         <div className="border border-primary d-flex justify-content-center align-items-center w-100 h-100">
-          game
+          {topic.name}
         </div>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-      </div>
-      <div className="border border-danger d-flex justify-content-center align-items-center w-100 h-100">
-        <div className="border border-primary d-flex justify-content-center align-items-center w-100 h-100">
-          game
-        </div>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-      </div>
-      <div className="border border-danger d-flex justify-content-center align-items-center w-100 h-100">
-        <div className="border border-primary d-flex justify-content-center align-items-center w-100 h-100">
-          game
-        </div>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
-        <Link
-          className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-          to="/"
-        >
-          <div>100</div>
-        </Link>
+        {questions.length ? questions.map(question => {
+          return (
+            <Link
+            className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
+            to={`/${question._id}`}
+            >
+              <div>{question.points}</div>
+            </Link>
+          )
+        })
+        : "No questions"
+        }
       </div>
     </>
   );
