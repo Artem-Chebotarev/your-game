@@ -22,7 +22,7 @@ export default function Topics() {
       <div className="border border-danger d-flex flex-column justify-content-center align-items-center w-75 h-75">
         {topics.length ? topics.map(topic => {
           return (
-            <Topic topic={topic}/>
+            <Topic key={topic._id} topic={topic}/>
           )
         })
         : 'No topics'

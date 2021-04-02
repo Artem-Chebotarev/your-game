@@ -8,14 +8,15 @@ export default function Topic({topic}) {
   return (
     <>
       <div className="border borderGame d-flex justify-content-center align-items-center w-100 h-100">
-        <div className="border border-primary d-flex justify-content-center align-items-center w-100 h-100">
+        <div className="border borderItem d-flex justify-content-center align-items-center w-100 h-100">
           {topic.name}
         </div>
         {questions.length ? questions.map(question => {
           return (
             <Link
-            className="border borderItem d-flex justify-content-center align-items-center w-100 h-100"
-            to={`/${question._id}`}
+            key = {question._id}
+            className="border borderItem d-flex justify-content-center align-items-center w-100 h-100 text-decoration-none"
+            to={`/game/${question._id}`}
             >
               <div>{question.points}</div>
             </Link>
