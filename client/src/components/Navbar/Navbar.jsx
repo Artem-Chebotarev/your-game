@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch, useSelector } from "react-redux"
+import './style.css'
 
 function Navbar() {
-  const [user, setuser] = useState({ name: 'Vasya', points: 10 })
+  const user = useSelector(state => state.user)
+  const dispatch = useDispatch()
+  const handlergameOver = () => {
+    //тут должен вызываться диспатч для ремува юзера
+  }
   return (
     <>
       {
         user.name.length ?
-          < nav className="navbar navbar-expand-lg navbar-light bg-light" >
+          < nav className="navbar navbar-expand-lg navbar-light colorNavbar" >
             <div className="container-fluid">
               <a className="navbar-brand" to="#">Welcome to game, {user.name}</a>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +29,7 @@ function Navbar() {
                 </ul>
               </div>
             </div>
-            <button type="button" className="btn btn-dark mx-5">Завершить игру</button>
+            <button type="button" className="btn black mx-5 colorButton" onClick={handlergameOver}>Завершить игру</button>
           </nav>
           : null
       }

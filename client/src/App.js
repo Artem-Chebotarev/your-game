@@ -6,21 +6,22 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-import { useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Start from "./components/Start/Start";
+
+import { useState } from 'react'
+import Navbar from './components/Navbar/Navbar'
+import Start from './components/Start/Start';
+import {  useSelector } from "react-redux"
 import Topics from "./components/topics/topics";
 
+
+
 function App() {
-  const [user, setuser] = useState({ name: "", points: null });
+  const user = useSelector(state => state.user)
   return (
     <>
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Start />
-          </Route>
           <Route exact path="/game">
             {/* {user.name ? <Topic /> : <Redirect to="/" />} */}
             <Topics />
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route exact path="/game/:id">
             {user.name ? <div>game with id</div> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/">
+            <Start />
           </Route>
           {/* <Route path="/">
             <div>hello page</div>
