@@ -4,6 +4,7 @@ import './style.css'
 export default function Topic({topic}) {
 
   const questions = topic.questions
+  // const answered = questions.answered
 
   return (
     <>
@@ -12,15 +13,19 @@ export default function Topic({topic}) {
           {topic.name}
         </div>
         {questions.length ? questions.map(question => {
-          return (
-            <Link
-            key = {question._id}
-            className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
-            to={`/game/${question._id}`}
-            >
-              <div>{question.points}</div>
-            </Link>
-          )
+          if (question.answered === false) {
+            return (
+              <Link
+              key = {question._id}
+              className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"
+              to={`/game/${question._id}`}
+              >
+                <div>{question.points}</div>
+              </Link>      
+            )
+          } else {
+            return (<div className="border border-primary d-flex justify-content-center align-items-center w-100 h-100"><img className="border border-primary d-flex justify-content-center align-items-center w-100 h-100" src="https://newsomsk.ru/images/news/fullhd/2017/10/2c909198ee0f0349c1b3a599399a43e3.jpg" /></div>)
+          }  
         })
         : "No questions"
         }

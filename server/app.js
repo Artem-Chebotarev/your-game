@@ -16,9 +16,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/api/v1/game", async (req, res) => {
   const topics = await TopicModel.find().populate("questions");
-  console.log(topics);
   res.json(topics);
 });
+
+app.post("/api/v1/game", async (req, res) => {
+  const question = await QuestionModel.findByIdAndUpdate(req.body.id, {answered: true}, {new: true})
+  console.log(question)
+})
 
 // app.get("/api/v1/game/:id", async (req, res) => {
 //   const question = await QuestionModel.findById().populate("questions");
