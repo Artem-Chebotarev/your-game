@@ -6,7 +6,7 @@ const userReducer = (state = {}, action) => {
         case SET_USER:
             return {
                 ...state,
-                name: action.payload.name
+                name: action.payload
             }
 
         case CHANGE_POINTS:
