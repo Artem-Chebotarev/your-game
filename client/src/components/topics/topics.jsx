@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Topic from "../topic/topic";
+import './style.css'
 import { getTopicsFromServer } from "../../redux/actionCreators/topicsAC";
 
 export default function Topics() {
