@@ -1,5 +1,4 @@
 import "./App.css";
-import Topic from "./components/topics/topics";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,11 +6,13 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
+
 import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Start from './components/Start/Start';
 import {  useSelector } from "react-redux"
 import Topics from "./components/topics/topics";
+
 
 
 function App() {
