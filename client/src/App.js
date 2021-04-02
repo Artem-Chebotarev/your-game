@@ -13,6 +13,7 @@ import Start from './components/Start/Start';
 import Topics from "./components/topics/topics";
 import { useSelector } from "react-redux";
 import Question from "./components/Question/Question";
+import Gameover from "./components/Gameover/Gameover";
 
 
 
@@ -24,22 +25,17 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/game">
-            {/* {user.name ? <Topics/> : <Redirect to="/" />} */}
-            <Topics />
+            {user.name ? <Topics /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/gameover">
-            <div>gameOver</div>
+            {user.name ? <Gameover /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/game/:id">
-            {/* {user.name ? <Question /> : <Redirect to="/" />} */}
-            <Question />
+            {user.name ? <Question /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/">
             <Start />
           </Route>
-          {/* <Route path="/">
-            <div>hello page</div>
-          </Route> */}
         </Switch>
       </Router>
     </>
