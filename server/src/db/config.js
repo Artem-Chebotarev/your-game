@@ -9,7 +9,7 @@ const options = {
 }
 
 const DB_HOST = 'localhost'
-const DB_NAME = 'elbrusnote'
+const DB_NAME = 'game'
 const DB_PORT = 27017
 
 const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`
